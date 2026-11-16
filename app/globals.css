@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #060b1b; font-family: Arial, Helvetica, sans-serif; }
+::selection { background: rgba(34, 211, 238, .35); color: white; }
+@keyframes orbital-spin { to { transform: rotate(360deg); } }
+@keyframes orbital-spin-reverse { to { transform: rotate(-360deg); } }
+@keyframes orbital-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+.orbital-spin { animation: orbital-spin 28s linear infinite; }
+.orbital-spin-reverse { animation: orbital-spin-reverse 22s linear infinite; }
+.orbital-float { animation: orbital-float 7s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .orbital-spin, .orbital-spin-reverse, .orbital-float { animation: none; }
+}
+
+/* DermaVision motion enhancements */
+@keyframes dv-scan { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: .8; } 88% { opacity: .8; } 100% { transform: translateY(260px); opacity: 0; } }
+.dv-scanline { animation: dv-scan 5s ease-in-out infinite; }
+.dv-card-lift { transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+.dv-card-lift:hover { transform: translateY(-7px); border-color: rgba(103,232,249,.32); box-shadow: 0 22px 60px rgba(10,30,80,.3); }
+@media (prefers-reduced-motion: reduce) { .dv-scanline { animation: none; } .dv-card-lift, .dv-card-lift:hover { transition: none; transform: none; } }
