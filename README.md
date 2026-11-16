@@ -1,31 +1,55 @@
 # 🔬 DermaVision AI
 
-### Explainable Multimodal Skin-Lesion Classification
+<div align="center">
 
-**DermaVision AI** is an AI-powered web application for skin-lesion classification using deep learning, clinical metadata, and explainable artificial intelligence.
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&pause=1100&color=00C9FF&center=true&vCenter=true&width=780&lines=Explainable+Multimodal+Skin+Lesion+Classification;Deep+Learning+%7C+Computer+Vision+%7C+Grad-CAM;ResNet50+%7C+PyTorch+%7C+Next.js;Making+AI+Predictions+More+Interpretable)](https://git.io/typing-svg)
 
-The platform combines **ResNet50-based image classification**, **multimodal learning**, and **Grad-CAM visual explanations** to provide interpretable predictions from dermoscopic images. It also features **DermaBot**, an AI assistant for dermatology-related educational questions.
+**An explainable AI-powered platform for skin-lesion classification using deep learning, dermoscopic images, and clinical metadata.**
 
-🌐 **[Live Website](https://dermavision-ai-seven.vercel.app/)** | 💻 **[GitHub Repository](https://github.com/Amii2410/Dermavision-AI)**
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-> **Deployment:** The frontend is live on Vercel. Cloud deployment of the AI inference backend and chatbot is in progress.
+
+**🌐 [Live Website](https://dermavision-ai-seven.vercel.app/) • 💻 [Source Code](https://github.com/Amii2410/Dermavision-AI)**
+
+</div>
+
+---
+
+## 🌟 About the Project
+
+**DermaVision AI** is a full-stack deep learning application designed to explore intelligent and interpretable skin-lesion classification.
+
+The platform combines **computer vision, multimodal learning, and explainable AI** to analyze dermoscopic images and provide visual insights into model predictions.
+
+It offers two classification approaches:
+
+- **Image-Only Model:** Classifies dermoscopic images using a ResNet50-based neural network.
+- **Multimodal Model:** Combines image features with clinical metadata such as age, sex, and anatomical lesion location.
+
+To improve interpretability, **Grad-CAM** generates heatmaps highlighting regions that influence model predictions.
+
+The platform also includes **DermaBot**, an interactive AI assistant that provides educational explanations about skin lesions and AI-related concepts.
 
 ---
 
 ## ✨ Key Features
 
-- **Image-Only Classification:** Predicts skin-lesion categories using a ResNet50-based deep learning model.
-- **Multimodal Classification:** Combines dermoscopic images with patient metadata such as age, sex, and lesion location.
-- **Explainable AI:** Uses Grad-CAM heatmaps to highlight image regions influencing model predictions.
-- **Prediction Insights:** Displays predicted lesion categories and class probabilities.
-- **DermaBot:** An interactive AI chatbot powered by Ollama and Qwen2.5 1.5B.
-- **Interactive Web Interface:** Responsive dashboard for image uploads, model selection, analysis, and chatbot interaction.
+- 🧠 **Deep Learning Classification** — ResNet50-based prediction across seven skin-lesion categories.
+- 🧬 **Multimodal Analysis** — Combines dermoscopic images with structured clinical metadata.
+- 🔍 **Explainable AI** — Grad-CAM heatmaps visualize influential image regions.
+- 📊 **Prediction Insights** — Displays predicted classes and probability distributions.
+- 🤖 **DermaBot** — Integrated AI assistant powered by Ollama and Qwen2.5 1.5B.
+- 💻 **Interactive Dashboard** — Responsive Next.js interface with image upload, model selection, and analysis results.
+
+---
 
 ## 📂 Dataset — HAM10000
 
-The models were developed using the **HAM10000 (Human Against Machine with 10,000 Training Images)** dataset, a publicly available collection of dermoscopic images used for skin-lesion classification research.
-
-The dataset contains **10,015 dermoscopic images** covering seven diagnostic categories.
+The models were developed using the **HAM10000 (Human Against Machine with 10,000 Training Images)** dataset, containing **10,015 dermoscopic images** across seven skin-lesion categories.
 
 | Class | Skin-Lesion Category |
 |---|---|
@@ -37,56 +61,62 @@ The dataset contains **10,015 dermoscopic images** covering seven diagnostic cat
 | `nv` | Melanocytic nevi |
 | `vasc` | Vascular lesions |
 
-Alongside image data, HAM10000 provides metadata fields such as **age, sex, and anatomical localization**, which are used in the multimodal classification pipeline.
+The dataset also includes metadata such as **age, sex, and anatomical localization**, which are incorporated into the multimodal classification pipeline.
 
-**Dataset Source:** [HAM10000 on Harvard Dataverse](https://doi.org/10.7910/DVN/DBW86T)
+📎 **Dataset:** [HAM10000 — Harvard Dataverse](https://doi.org/10.7910/DVN/DBW86T)
 
-The dataset is not included in this repository.
+*The dataset is not included in this repository.*
 
-## 🧠 Models & Performance
+---
 
-Two ResNet50-based classification approaches were developed and evaluated on held-out test data.
+## 📊 Model Performance
+
+Both models were evaluated on held-out test data.
 
 | Model | Input | Test Accuracy |
 |---|---|---:|
 | **Image-Only ResNet50** | Dermoscopic image | **74.85%** |
 | **Multimodal ResNet50** | Image + clinical metadata | **78.46%** |
 
-The multimodal model achieved an improvement of **3.61 percentage points**, demonstrating the potential value of combining visual and structured clinical information.
+The multimodal model achieved a **3.61 percentage-point improvement** over the image-only model in these experiments.
 
-**Explainability:** Grad-CAM is used to generate heatmaps showing image regions that influence the model's predictions.
+Grad-CAM provides visual explanations for model predictions by highlighting influential regions in the input image.
 
-These evaluation results do not establish clinical diagnostic reliability.
+*These results represent research-model performance, not validated clinical diagnostic accuracy.*
+
+---
 
 ## 🛠️ Tech Stack
 
 | Component | Technologies |
 |---|---|
-| Frontend | Next.js, React, TypeScript, Tailwind CSS |
-| Backend | Python, FastAPI |
-| Deep Learning | PyTorch, Torchvision, ResNet50 |
-| Explainable AI | Grad-CAM |
-| Multimodal Learning | Image features + clinical metadata |
-| AI Assistant | Ollama, Qwen2.5 1.5B |
-| Dataset | HAM10000 |
-| Deployment | Vercel (frontend) |
+| **Frontend** | Next.js, React, TypeScript, Tailwind CSS |
+| **Backend** | Python, FastAPI |
+| **Deep Learning** | PyTorch, Torchvision, ResNet50 |
+| **Explainable AI** | Grad-CAM |
+| **Multimodal Learning** | Image features + clinical metadata |
+| **AI Chatbot** | Ollama, Qwen2.5 1.5B |
+| **Dataset** | HAM10000 |
+| **Deployment** | Vercel (frontend) |
+
+---
 
 ## 🚀 Getting Started
 
-**1. Clone the repository**
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Amii2410/Dermavision-AI.git
 cd Dermavision-AI
 ```
 
-**2. Install frontend dependencies**
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-**3. Configure the API URL**
+### 3. Configure the Frontend
 
 Create a `.env.local` file in the project root:
 
@@ -94,23 +124,23 @@ Create a `.env.local` file in the project root:
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 ```
 
-**4. Start the frontend**
+### 4. Start the Frontend
 
 ```bash
 npm run dev
 ```
 
-Visit `http://localhost:3000`.
+Open **http://localhost:3000** in your browser.
 
-**5. Start the backend**
+### 5. Run the AI Backend
 
-Set up a Python environment with the required backend dependencies and trained model files, then run:
+Set up a Python environment, install the required backend dependencies, and configure the trained model files.
 
 ```bash
 python -m uvicorn backend.main:app --reload --port 8000
 ```
 
-**6. Run DermaBot locally**
+### 6. Run DermaBot
 
 Install Ollama and download the language model:
 
@@ -118,32 +148,53 @@ Install Ollama and download the language model:
 ollama pull qwen2.5:1.5b
 ```
 
-Ensure the Ollama service is running and accessible to the FastAPI backend.
+Ensure the Ollama service is running.
 
-**Note:** Trained model weights and the complete backend environment are not included in this repository. They must be configured separately for local AI inference.
+> **Note:** Trained model weights and the complete backend environment are not included in this repository. They must be configured separately for local inference.
+
+---
 
 ## 🌐 Deployment
 
 The Next.js frontend is deployed on **Vercel**.
 
-**Live Application:** [DermaVision AI](https://dermavision-ai-seven.vercel.app/)
+**🔗 [Explore the Live Website](https://dermavision-ai-seven.vercel.app/)**
 
-The FastAPI inference backend and Ollama-based chatbot currently run locally. Public cloud deployment of these services is planned.
+| Service | Status |
+|---|---|
+| Next.js Frontend | ✅ Deployed |
+| FastAPI Backend | ⏳ Cloud deployment pending |
+| ResNet50 Inference | 💻 Running locally |
+| DermaBot | 💻 Running locally |
+
+The website is publicly accessible, while AI inference and chatbot functionality require the backend services to be deployed and connected for remote visitors.
+
+---
 
 ## 🔮 Future Improvements
 
 - Cloud deployment of AI inference and chatbot services
-- Improved model calibration and robustness
-- Additional model evaluation and explainability methods
-- Optimized inference performance
+- Improved model robustness and calibration
+- Additional explainability techniques
+- Optimized inference speed and scalability
 - Enhanced user experience and accessibility
-
-## ⚠️ Disclaimer
-
-DermaVision AI is a research and educational software prototype, **not a medical diagnostic tool**. Model predictions and AI-generated responses may be inaccurate and must not replace evaluation by a qualified healthcare professional.
 
 ---
 
+## ⚠️ Disclaimer
+
+DermaVision AI is a **research and educational software prototype**, not a medical diagnostic tool.
+
+Model predictions, Grad-CAM explanations, and AI-generated responses may be inaccurate and should not replace professional medical evaluation or advice.
+
+---
+
+<div align="center">
+
 **Developed by [Amii2410](https://github.com/Amii2410)**
 
-*Exploring the intersection of deep learning, multimodal AI, and explainable computer vision.*
+*Exploring deep learning, multimodal AI, and explainable computer vision.*
+
+⭐ **If you find this project interesting, consider starring the repository!**
+
+</div>
